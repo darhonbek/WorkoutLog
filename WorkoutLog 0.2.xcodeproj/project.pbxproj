@@ -1,0 +1,426 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		200AA9181F769E0A00744743 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200AA9171F769E0A00744743 /* UIViewControllerExtension.swift */; };
+		200AA91A1F76C83700744743 /* SetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200AA9191F76C83700744743 /* SetTableViewCell.swift */; };
+		2028526A1F6AEB68006D2675 /* DayTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202852691F6AEB68006D2675 /* DayTableViewController.swift */; };
+		2028526C1F6AECB6006D2675 /* MusclesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2028526B1F6AECB6006D2675 /* MusclesTableViewController.swift */; };
+		2064557E1F755580000CB3FC /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2064557D1F755580000CB3FC /* DateExtension.swift */; };
+		206455801F755C13000CB3FC /* DayLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2064557F1F755C13000CB3FC /* DayLog.swift */; };
+		20AFB2541F6986D3003C43C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AFB2531F6986D3003C43C2 /* AppDelegate.swift */; };
+		20AFB2591F6986D3003C43C2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20AFB2571F6986D3003C43C2 /* Main.storyboard */; };
+		20AFB25C1F6986D3003C43C2 /* WorkoutLog_0_2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 20AFB25A1F6986D3003C43C2 /* WorkoutLog_0_2.xcdatamodeld */; };
+		20AFB25E1F6986D3003C43C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20AFB25D1F6986D3003C43C2 /* Assets.xcassets */; };
+		20AFB2611F6986D3003C43C2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20AFB25F1F6986D3003C43C2 /* LaunchScreen.storyboard */; };
+		20AFB26A1F698B5E003C43C2 /* HistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AFB2691F698B5E003C43C2 /* HistoryTableViewController.swift */; };
+		20AFB26C1F698F6F003C43C2 /* AddDayPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AFB26B1F698F6F003C43C2 /* AddDayPopUpViewController.swift */; };
+		20CF75AF1F6D0AC200D4A865 /* AddLogPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CF75AE1F6D0AC200D4A865 /* AddLogPopUpViewController.swift */; };
+		20CF75B11F6D39C900D4A865 /* RoundCornerButtonUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CF75B01F6D39C900D4A865 /* RoundCornerButtonUIButton.swift */; };
+		20CF75B41F6D616000D4A865 /* StaticMuscle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CF75B31F6D616000D4A865 /* StaticMuscle.swift */; };
+		20CF75B91F6D61D800D4A865 /* StaticDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CF75B81F6D61D800D4A865 /* StaticDB.swift */; };
+		20CF75BD1F6D620D00D4A865 /* ExerciseLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CF75BC1F6D620D00D4A865 /* ExerciseLog.swift */; };
+		20CF75BF1F6D622200D4A865 /* SetLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CF75BE1F6D622200D4A865 /* SetLog.swift */; };
+		20CF75C11F6D68F000D4A865 /* DayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CF75C01F6D68F000D4A865 /* DayTableViewCell.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		200AA9171F769E0A00744743 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		200AA9191F76C83700744743 /* SetTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetTableViewCell.swift; sourceTree = "<group>"; };
+		202852691F6AEB68006D2675 /* DayTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayTableViewController.swift; sourceTree = "<group>"; };
+		2028526B1F6AECB6006D2675 /* MusclesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusclesTableViewController.swift; sourceTree = "<group>"; };
+		2064557D1F755580000CB3FC /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		2064557F1F755C13000CB3FC /* DayLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayLog.swift; sourceTree = "<group>"; };
+		20AFB2501F6986D3003C43C2 /* WorkoutLog 0.2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WorkoutLog 0.2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		20AFB2531F6986D3003C43C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		20AFB2581F6986D3003C43C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		20AFB25B1F6986D3003C43C2 /* WorkoutLog_0_2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WorkoutLog_0_2.xcdatamodel; sourceTree = "<group>"; };
+		20AFB25D1F6986D3003C43C2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		20AFB2601F6986D3003C43C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		20AFB2621F6986D3003C43C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		20AFB2691F698B5E003C43C2 /* HistoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryTableViewController.swift; sourceTree = "<group>"; };
+		20AFB26B1F698F6F003C43C2 /* AddDayPopUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddDayPopUpViewController.swift; sourceTree = "<group>"; };
+		20CF75AE1F6D0AC200D4A865 /* AddLogPopUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddLogPopUpViewController.swift; sourceTree = "<group>"; };
+		20CF75B01F6D39C900D4A865 /* RoundCornerButtonUIButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundCornerButtonUIButton.swift; sourceTree = "<group>"; };
+		20CF75B31F6D616000D4A865 /* StaticMuscle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaticMuscle.swift; sourceTree = "<group>"; };
+		20CF75B81F6D61D800D4A865 /* StaticDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaticDB.swift; sourceTree = "<group>"; };
+		20CF75BC1F6D620D00D4A865 /* ExerciseLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseLog.swift; sourceTree = "<group>"; };
+		20CF75BE1F6D622200D4A865 /* SetLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetLog.swift; sourceTree = "<group>"; };
+		20CF75C01F6D68F000D4A865 /* DayTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayTableViewCell.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		20AFB24D1F6986D3003C43C2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		200AA9161F768ACB00744743 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				20CF75C01F6D68F000D4A865 /* DayTableViewCell.swift */,
+				200AA9191F76C83700744743 /* SetTableViewCell.swift */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		20AFB2471F6986D3003C43C2 = {
+			isa = PBXGroup;
+			children = (
+				20AFB2521F6986D3003C43C2 /* WorkoutLog 0.2 */,
+				20AFB2681F6986ED003C43C2 /* Supporting files */,
+				20AFB2511F6986D3003C43C2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		20AFB2511F6986D3003C43C2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				20AFB2501F6986D3003C43C2 /* WorkoutLog 0.2.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		20AFB2521F6986D3003C43C2 /* WorkoutLog 0.2 */ = {
+			isa = PBXGroup;
+			children = (
+				20CF75B51F6D617000D4A865 /* CoreData */,
+				20CF75B61F6D618700D4A865 /* Controllers */,
+				200AA9161F768ACB00744743 /* Cells */,
+				20CF75B71F6D61AA00D4A865 /* UI-related */,
+			);
+			path = "WorkoutLog 0.2";
+			sourceTree = "<group>";
+		};
+		20AFB2681F6986ED003C43C2 /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				20AFB2531F6986D3003C43C2 /* AppDelegate.swift */,
+				2064557D1F755580000CB3FC /* DateExtension.swift */,
+				200AA9171F769E0A00744743 /* UIViewControllerExtension.swift */,
+				20AFB25D1F6986D3003C43C2 /* Assets.xcassets */,
+				20AFB25F1F6986D3003C43C2 /* LaunchScreen.storyboard */,
+				20AFB2621F6986D3003C43C2 /* Info.plist */,
+			);
+			name = "Supporting files";
+			path = "WorkoutLog 0.2";
+			sourceTree = "<group>";
+		};
+		20CF75B51F6D617000D4A865 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				20AFB25A1F6986D3003C43C2 /* WorkoutLog_0_2.xcdatamodeld */,
+				20CF75B31F6D616000D4A865 /* StaticMuscle.swift */,
+				20CF75B81F6D61D800D4A865 /* StaticDB.swift */,
+				20CF75BC1F6D620D00D4A865 /* ExerciseLog.swift */,
+				20CF75BE1F6D622200D4A865 /* SetLog.swift */,
+				2064557F1F755C13000CB3FC /* DayLog.swift */,
+			);
+			name = CoreData;
+			sourceTree = "<group>";
+		};
+		20CF75B61F6D618700D4A865 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				20AFB2691F698B5E003C43C2 /* HistoryTableViewController.swift */,
+				20AFB26B1F698F6F003C43C2 /* AddDayPopUpViewController.swift */,
+				202852691F6AEB68006D2675 /* DayTableViewController.swift */,
+				20CF75AE1F6D0AC200D4A865 /* AddLogPopUpViewController.swift */,
+				2028526B1F6AECB6006D2675 /* MusclesTableViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		20CF75B71F6D61AA00D4A865 /* UI-related */ = {
+			isa = PBXGroup;
+			children = (
+				20AFB2571F6986D3003C43C2 /* Main.storyboard */,
+				20CF75B01F6D39C900D4A865 /* RoundCornerButtonUIButton.swift */,
+			);
+			name = "UI-related";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		20AFB24F1F6986D3003C43C2 /* WorkoutLog 0.2 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 20AFB2651F6986D3003C43C2 /* Build configuration list for PBXNativeTarget "WorkoutLog 0.2" */;
+			buildPhases = (
+				20AFB24C1F6986D3003C43C2 /* Sources */,
+				20AFB24D1F6986D3003C43C2 /* Frameworks */,
+				20AFB24E1F6986D3003C43C2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "WorkoutLog 0.2";
+			productName = "WorkoutLog 0.2";
+			productReference = 20AFB2501F6986D3003C43C2 /* WorkoutLog 0.2.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		20AFB2481F6986D3003C43C2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Darkhonbek Mamataliev";
+				TargetAttributes = {
+					20AFB24F1F6986D3003C43C2 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = TALWF53E28;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 20AFB24B1F6986D3003C43C2 /* Build configuration list for PBXProject "WorkoutLog 0.2" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 20AFB2471F6986D3003C43C2;
+			productRefGroup = 20AFB2511F6986D3003C43C2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				20AFB24F1F6986D3003C43C2 /* WorkoutLog 0.2 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		20AFB24E1F6986D3003C43C2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				20AFB2611F6986D3003C43C2 /* LaunchScreen.storyboard in Resources */,
+				20AFB25E1F6986D3003C43C2 /* Assets.xcassets in Resources */,
+				20AFB2591F6986D3003C43C2 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		20AFB24C1F6986D3003C43C2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				20CF75C11F6D68F000D4A865 /* DayTableViewCell.swift in Sources */,
+				2028526C1F6AECB6006D2675 /* MusclesTableViewController.swift in Sources */,
+				200AA9181F769E0A00744743 /* UIViewControllerExtension.swift in Sources */,
+				20CF75B11F6D39C900D4A865 /* RoundCornerButtonUIButton.swift in Sources */,
+				20CF75BF1F6D622200D4A865 /* SetLog.swift in Sources */,
+				20AFB26C1F698F6F003C43C2 /* AddDayPopUpViewController.swift in Sources */,
+				20CF75B91F6D61D800D4A865 /* StaticDB.swift in Sources */,
+				20CF75AF1F6D0AC200D4A865 /* AddLogPopUpViewController.swift in Sources */,
+				20AFB26A1F698B5E003C43C2 /* HistoryTableViewController.swift in Sources */,
+				20AFB25C1F6986D3003C43C2 /* WorkoutLog_0_2.xcdatamodeld in Sources */,
+				20AFB2541F6986D3003C43C2 /* AppDelegate.swift in Sources */,
+				200AA91A1F76C83700744743 /* SetTableViewCell.swift in Sources */,
+				2064557E1F755580000CB3FC /* DateExtension.swift in Sources */,
+				2028526A1F6AEB68006D2675 /* DayTableViewController.swift in Sources */,
+				206455801F755C13000CB3FC /* DayLog.swift in Sources */,
+				20CF75B41F6D616000D4A865 /* StaticMuscle.swift in Sources */,
+				20CF75BD1F6D620D00D4A865 /* ExerciseLog.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		20AFB2571F6986D3003C43C2 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				20AFB2581F6986D3003C43C2 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		20AFB25F1F6986D3003C43C2 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				20AFB2601F6986D3003C43C2 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		20AFB2631F6986D3003C43C2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		20AFB2641F6986D3003C43C2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		20AFB2661F6986D3003C43C2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = TALWF53E28;
+				INFOPLIST_FILE = "WorkoutLog 0.2/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "darkhonbek.WorkoutLog-0-2";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		20AFB2671F6986D3003C43C2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = TALWF53E28;
+				INFOPLIST_FILE = "WorkoutLog 0.2/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "darkhonbek.WorkoutLog-0-2";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		20AFB24B1F6986D3003C43C2 /* Build configuration list for PBXProject "WorkoutLog 0.2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				20AFB2631F6986D3003C43C2 /* Debug */,
+				20AFB2641F6986D3003C43C2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		20AFB2651F6986D3003C43C2 /* Build configuration list for PBXNativeTarget "WorkoutLog 0.2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				20AFB2661F6986D3003C43C2 /* Debug */,
+				20AFB2671F6986D3003C43C2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		20AFB25A1F6986D3003C43C2 /* WorkoutLog_0_2.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				20AFB25B1F6986D3003C43C2 /* WorkoutLog_0_2.xcdatamodel */,
+			);
+			currentVersion = 20AFB25B1F6986D3003C43C2 /* WorkoutLog_0_2.xcdatamodel */;
+			path = WorkoutLog_0_2.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 20AFB2481F6986D3003C43C2 /* Project object */;
+}
