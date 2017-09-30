@@ -130,7 +130,7 @@
                             </barButtonItem>
                             <barButtonItem systemItem="bookmarks" id="hZe-w1-RPm">
                                 <connections>
-                                    <segue destination="JiG-ly-hM2" kind="show" identifier="Add exercise log" id="w1y-bc-TbT"/>
+                                    <segue destination="JiG-ly-hM2" kind="show" identifier="Muscle List" id="w1y-bc-TbT"/>
                                 </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
@@ -248,27 +248,30 @@
         <scene sceneID="Lzl-Wg-ych">
             <objects>
                 <tableViewController id="JiG-ly-hM2" customClass="MusclesTableViewController" customModule="WorkoutLog_0_2" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="fz9-5Y-pqH">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="75" sectionHeaderHeight="28" sectionFooterHeight="28" id="fz9-5Y-pqH">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="muscleLog" textLabel="qXk-jJ-O0w" style="IBUITableViewCellStyleDefault" id="xgI-Qh-S1Z" userLabel="muscleLog">
-                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="muscleLog" textLabel="qXk-jJ-O0w" rowHeight="70" style="IBUITableViewCellStyleDefault" id="xgI-Qh-S1Z" userLabel="muscleLog" customClass="MuscleTableViewCell" customModule="WorkoutLog_0_2" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="320" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xgI-Qh-S1Z" id="lCu-sl-BdB">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="69.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Muscle name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qXk-jJ-O0w">
-                                            <rect key="frame" x="15" y="0.0" width="290" height="43.5"/>
+                                            <rect key="frame" x="15" y="0.0" width="290" height="69.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="muscleNameLabel" destination="qXk-jJ-O0w" id="YCm-53-gSe"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -280,7 +283,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gOw-WY-R1r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3398" y="335"/>
+            <point key="canvasLocation" x="3397.5" y="334.85915492957747"/>
         </scene>
         <!--Add Log Pop Up View Controller-->
         <scene sceneID="JIX-Q2-tkA">

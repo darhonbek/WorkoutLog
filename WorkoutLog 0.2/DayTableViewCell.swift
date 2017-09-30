@@ -20,8 +20,8 @@ class DayTableViewCell: UITableViewCell {
     }
     
     private func updateUI() {
-        let date = dayLog?.date as! Date
-        dateLabel.text = date.toString(dateFormat: "dd/MM/yyyy")
+        let date = dayLog?.date as Date?
+        dateLabel.text = date?.toString(dateFormat: "dd/MM/yyyy")
         let numberLabelText = "Day " + String(Int((dayLog?.number)!))
         numberLabel.text = numberLabelText
     }

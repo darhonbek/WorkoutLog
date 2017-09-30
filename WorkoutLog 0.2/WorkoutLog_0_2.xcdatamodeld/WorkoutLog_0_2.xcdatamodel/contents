@@ -2,14 +2,18 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="16G29" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="DayLog" representedClassName=".DayLog" syncable="YES" codeGenerationType="category">
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
-        <attribute name="muscles" optional="YES" attributeType="Transformable" customClassName="NSArray" syncable="YES"/>
         <attribute name="number" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <relationship name="exercises" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ExerciseLog" inverseName="day" inverseEntity="ExerciseLog" syncable="YES"/>
+        <relationship name="muscles" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MuscleLog" inverseName="day" inverseEntity="MuscleLog" syncable="YES"/>
     </entity>
     <entity name="ExerciseLog" representedClassName=".ExerciseLog" syncable="YES" codeGenerationType="category">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="day" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="DayLog" inverseName="exercises" inverseEntity="DayLog" syncable="YES"/>
         <relationship name="sets" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SetLog" inverseName="exercise" inverseEntity="SetLog" syncable="YES"/>
+    </entity>
+    <entity name="MuscleLog" representedClassName=".MuscleLog" syncable="YES" codeGenerationType="category">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="day" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DayLog" inverseName="muscles" inverseEntity="DayLog" syncable="YES"/>
     </entity>
     <entity name="SetLog" representedClassName=".SetLog" syncable="YES" codeGenerationType="category">
         <attribute name="number" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
@@ -17,18 +21,10 @@
         <attribute name="weight" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <relationship name="exercise" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="ExerciseLog" inverseName="sets" inverseEntity="ExerciseLog" syncable="YES"/>
     </entity>
-    <entity name="StaticDB" representedClassName=".StaticDB" syncable="YES" codeGenerationType="category">
-        <relationship name="muscles" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="StaticMuscle" syncable="YES"/>
-    </entity>
-    <entity name="StaticMuscle" representedClassName=".StaticMuscle" syncable="YES" codeGenerationType="category">
-        <attribute name="exercises" optional="YES" attributeType="Transformable" customClassName="NSArray" syncable="YES"/>
-        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-    </entity>
     <elements>
-        <element name="DayLog" positionX="268" positionY="-223" width="128" height="103"/>
+        <element name="DayLog" positionX="279" positionY="-193" width="128" height="103"/>
         <element name="ExerciseLog" positionX="540" positionY="-252" width="128" height="88"/>
-        <element name="SetLog" positionX="781" positionY="-172" width="128" height="103"/>
-        <element name="StaticDB" positionX="270" positionY="-328" width="128" height="60"/>
-        <element name="StaticMuscle" positionX="484" positionY="-342" width="128" height="75"/>
+        <element name="SetLog" positionX="738" positionY="-252" width="128" height="103"/>
+        <element name="MuscleLog" positionX="540" positionY="-90" width="128" height="73"/>
     </elements>
 </model>

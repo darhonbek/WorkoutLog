@@ -8,6 +8,7 @@
 
 import UIKit
 import Foundation
+import UserNotifications
 
 class AddLogPopUpViewController: UIViewController, UITextFieldDelegate {
     
@@ -24,13 +25,17 @@ class AddLogPopUpViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var musclePicker: UIPickerView!
     @IBOutlet weak var exercisePicker: UIPickerView!
     
-    static var textFieldsAreActive = false
+    static var recentPickedMuscle: String?
+    static var recentPickedExercise: String?
     
     public var dayLog: DayLog?
     var activeField: UITextField?
     var muscleList:[String] = [String]()
-    var exerciseList:[String] = [String]()
-    var muscleAndExerciseList:[String: [String]] = [String: [String]]()
+    var exerciseList:[String] {
+        get {
+            return Database.muscles[pickedMuscle]!
+        }
+    }
     var pickedMuscle:String = String()
     
     private var reps: Int32 {
@@ -54,29 +59,13 @@ class AddLogPopUpViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    //MARK: TEMPORARY data initialization
-    //Remove when will be connected to the CoreData
-    func tempDataInit() {
-        muscleList = [
-            "Muscle 1",
-            "Muscle 2",
-            "Muscle 3",
-            "Muscle 4",
-            "Muscle 5",
-        ]
-        pickedMuscle = muscleList[0]
-        for muscle in muscleList {
-            exerciseList.removeAll()
-            for i in 0..<5 {
-                var str = "Exercise #" + String(i)
-                str.append(" ")
-                str.append( (muscle.characters.last) ?? "-" )
-                
-                exerciseList.append(str)
-            }
-            muscleAndExerciseList[muscle] = exerciseList
+    //MARK: Data initialization
+    func initMuscleList() {
+        Database.loadData()
+        for (key, _) in Database.muscles {
+            muscleList.append(key)
         }
-        
+        pickedMuscle = muscleList[0]
     }
     
     private func initTextFieldTags() {
@@ -91,7 +80,7 @@ class AddLogPopUpViewController: UIViewController, UITextFieldDelegate {
         hideKeyboardWhenTappedAround()
         initTextFieldTags()
         
-        tempDataInit()
+        initMuscleList()
         
         doneButton.addBorder(side: .Top, color: .lightGray, width: 1.0)
         
@@ -114,6 +103,24 @@ class AddLogPopUpViewController: UIViewController, UITextFieldDelegate {
         createToolBarForTextField(exerciseTextField)
         createToolBarForTextField(repsTextField)
         createToolBarForTextField(weightTextField, withButton: "Done")
+        
+        loadRecentLog()
+    }
+    
+    //Reloads recently memorized Log
+    func loadRecentLog() {
+        if let muscle = AddLogPopUpViewController.recentPickedMuscle,
+            let exercise = AddLogPopUpViewController.recentPickedExercise {
+            muscleTextField.text = muscle
+            exerciseTextField.text = exercise
+            repsTextField.becomeFirstResponder()
+        }
+    }
+    
+    //Memorizes last added log
+    func updateRecentLog(muscle: String, exercise: String) {
+        AddLogPopUpViewController.recentPickedMuscle = muscle
+        AddLogPopUpViewController.recentPickedExercise = exercise
     }
     
     //MARK: - Adding new log
@@ -125,10 +132,12 @@ class AddLogPopUpViewController: UIViewController, UITextFieldDelegate {
             
             let context = AppDelegate.viewContext
             do {
-                //MARK: ERROR thrown here when trying to add the new exerciseLog
-                if let exerciseName = exerciseName,
+                if let muscleName = muscleName,
+                    let exerciseName = exerciseName,
                     let unwrappedDayLog = dayLog {
                     let _ = try? ExerciseLog.modifyOrCreateExerciseLog(named: exerciseName, reps: reps, weight: weight, dayLog: unwrappedDayLog, in: context)
+                    let _ = try? MuscleLog.findOrCreateMuscleLog(dayLog: unwrappedDayLog, named: muscleName, in: context)
+                    updateRecentLog(muscle: muscleName, exercise: exerciseName)
                 }
                 try context.save()
                 //reload data in DayTableViewController
@@ -139,18 +148,18 @@ class AddLogPopUpViewController: UIViewController, UITextFieldDelegate {
             }
             dismiss(animated: true, completion: nil)
         } else {
-            //MARK: - NOT COMPLETED
             //Notify user about incompleted text fields
-            print("Text fields are not completed")
+            alert()
         }
     }
     
     //MARK: Configuring TOOLBARS for Text Fields
     func createToolBarForTextField(_ textField: UITextField, withButton buttonTitle: String = "Next") {
+        let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
         let doneButton = UIBarButtonItem(title: buttonTitle, style: .plain, target: self, action: #selector(AddLogPopUpViewController.findNextResponder))
         let toolbar = UIToolbar()
         toolbar.sizeToFit()
-        toolbar.setItems([doneButton], animated: true)
+        toolbar.setItems([space, doneButton], animated: true)
         toolbar.isUserInteractionEnabled = true
         textField.inputAccessoryView = toolbar
     }
@@ -233,6 +242,16 @@ class AddLogPopUpViewController: UIViewController, UITextFieldDelegate {
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField){
+        textField.text = ""
+        if textField == muscleTextField {
+            exerciseTextField.text = ""
+            if (textField.text?.isEmpty)! {
+                textField.text = muscleList[0]
+            }
+        }
+        if textField == exerciseTextField && (exerciseTextField.text?.isEmpty)! && !(muscleTextField.text?.isEmpty)!{
+            textField.text = exerciseList[0]
+        }
         activeField = textField
     }
     
@@ -253,7 +272,7 @@ extension AddLogPopUpViewController: UIPickerViewDelegate, UIPickerViewDataSourc
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         switch pickerView {
         case exercisePicker:
-            return (muscleAndExerciseList[pickedMuscle]?.count) ?? 0
+            return exerciseList.count
         case musclePicker:
             return muscleList.count
         default:
@@ -266,7 +285,7 @@ extension AddLogPopUpViewController: UIPickerViewDelegate, UIPickerViewDataSourc
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         switch pickerView {
         case exercisePicker:
-            return muscleAndExerciseList[pickedMuscle]?[row]
+            return exerciseList[row]
         case musclePicker:
             return muscleList[row]
         default:
@@ -279,7 +298,7 @@ extension AddLogPopUpViewController: UIPickerViewDelegate, UIPickerViewDataSourc
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         switch pickerView {
         case exercisePicker:
-            exerciseTextField.text = muscleAndExerciseList[pickedMuscle]?[row]
+            exerciseTextField.text = exerciseList[row]
         case musclePicker:
             pickedMuscle = muscleList[row]
             muscleTextField.text = muscleList[row]
@@ -287,4 +306,27 @@ extension AddLogPopUpViewController: UIPickerViewDelegate, UIPickerViewDataSourc
             print("Logical bug in AddLogPopUpViewController, didSelectRow")
         }
     }
+    
+    //MARK: - Alert
+    func alert() {
+        let alert = UIAlertController(title: "Some Fields\nAre Empty", message: "Please, fill all the fields", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

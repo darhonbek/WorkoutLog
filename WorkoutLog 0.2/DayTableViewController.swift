@@ -59,6 +59,10 @@ class DayTableViewController: UITableViewController {
                 if let vc = segue.destination as? AddLogPopUpViewController {
                     vc.dayLog = dayLog
                 }
+            } else if identifier == "Muscle List" {
+                if let vc = segue.destination as? MusclesTableViewController {
+                    vc.dayLog = dayLog
+                }
             }
         }
     }
@@ -86,6 +90,12 @@ class DayTableViewController: UITableViewController {
         return "Error, see log for details"
         
     }
+    
+    //Configures header section (alignment, etc.)
+    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        let header: UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView
+        header.textLabel?.textAlignment = NSTextAlignment.center
+    }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "setLog", for: indexPath)
@@ -100,15 +110,29 @@ class DayTableViewController: UITableViewController {
     }
     
     /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
+     if editingStyle == .delete {
+     // Delete the row from the data source
+     if let setLogToDelete = tableView.cellForRow(at: indexPath) as? SetTableViewCell {
+     container?.viewContext.delete(setLogToDelete.setLog!)
+     try? container?.viewContext.save()
+     tableView.deleteRows(at: [indexPath], with: .fade)
+     //updates the rows enumeration
+     //try? DayLog.updateDayNumeration(in: container.viewContext)
+     //MARK: Warning - heavy fn call. Optimize to update only a single row
+     updateTableData()
+     }
+     
+     
+     
+     }
     */
+    
+    // Override to support editing the table view.
+//    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+//        if editingStyle == .delete {
+//            // Delete the row from the data source
+//            tableView.deleteRows(at: [indexPath], with: .fade)
+//        } 
+//    }
 
 }

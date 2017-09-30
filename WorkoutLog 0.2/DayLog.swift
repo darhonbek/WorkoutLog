@@ -10,11 +10,18 @@ import Foundation
 import CoreData
 
 class DayLog: NSManagedObject {
-    public func getExerciseArray() -> [ExerciseLog]{
+    public func getExerciseArray() -> [ExerciseLog] {
         if let array = exercises?.allObjects as? [ExerciseLog] {
             return array
         }
         return [ExerciseLog]()
+    }
+    
+    public func getMuscleArray() -> [MuscleLog] {
+        if let array = muscles?.allObjects as? [MuscleLog] {
+            return array
+        }
+        return [MuscleLog]()
     }
     
     class func formatDateToDays(date: Date) -> Date {
@@ -47,7 +54,7 @@ class DayLog: NSManagedObject {
         let dayLog = DayLog(context: context)
         dayLog.date = date as NSDate
         dayLog.exercises = NSSet()
-        dayLog.muscles = NSArray()
+        dayLog.muscles = NSSet()
         
         if let days = try? context.count(for: DayLog.fetchRequest()) {
             dayLog.number = Int64(days)

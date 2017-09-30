@@ -23,8 +23,6 @@ class AddDayPopUpViewController: UIViewController {
         popupView.layer.cornerRadius = 10
         popupView.layer.masksToBounds = true
         date = datePicker.date
-        
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func closePopUp(_ sender: UIButton) {
@@ -33,7 +31,7 @@ class AddDayPopUpViewController: UIViewController {
         do {
             let _ = try? DayLog.findOrCreateDayLog(matching: date, in: context)
             try context.save()
-            //reload data in HistoryTableViewControllwer
+            //reloads data in HistoryTableViewControllwer
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "loadDays"), object: nil)
         }
         catch {

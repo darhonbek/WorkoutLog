@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		200AA9181F769E0A00744743 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200AA9171F769E0A00744743 /* UIViewControllerExtension.swift */; };
 		200AA91A1F76C83700744743 /* SetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200AA9191F76C83700744743 /* SetTableViewCell.swift */; };
+		2011C93D1F7E962500D7BA01 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2011C93C1F7E962500D7BA01 /* Database.swift */; };
+		2026F2A11F7E9F7D00388B51 /* MuscleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2026F2A01F7E9F7D00388B51 /* MuscleTableViewCell.swift */; };
+		2026F2A31F7EA34300388B51 /* MuscleLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2026F2A21F7EA34300388B51 /* MuscleLog.swift */; };
 		2028526A1F6AEB68006D2675 /* DayTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202852691F6AEB68006D2675 /* DayTableViewController.swift */; };
 		2028526C1F6AECB6006D2675 /* MusclesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2028526B1F6AECB6006D2675 /* MusclesTableViewController.swift */; };
 		2064557E1F755580000CB3FC /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2064557D1F755580000CB3FC /* DateExtension.swift */; };
@@ -22,8 +25,6 @@
 		20AFB26C1F698F6F003C43C2 /* AddDayPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AFB26B1F698F6F003C43C2 /* AddDayPopUpViewController.swift */; };
 		20CF75AF1F6D0AC200D4A865 /* AddLogPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CF75AE1F6D0AC200D4A865 /* AddLogPopUpViewController.swift */; };
 		20CF75B11F6D39C900D4A865 /* RoundCornerButtonUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CF75B01F6D39C900D4A865 /* RoundCornerButtonUIButton.swift */; };
-		20CF75B41F6D616000D4A865 /* StaticMuscle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CF75B31F6D616000D4A865 /* StaticMuscle.swift */; };
-		20CF75B91F6D61D800D4A865 /* StaticDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CF75B81F6D61D800D4A865 /* StaticDB.swift */; };
 		20CF75BD1F6D620D00D4A865 /* ExerciseLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CF75BC1F6D620D00D4A865 /* ExerciseLog.swift */; };
 		20CF75BF1F6D622200D4A865 /* SetLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CF75BE1F6D622200D4A865 /* SetLog.swift */; };
 		20CF75C11F6D68F000D4A865 /* DayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CF75C01F6D68F000D4A865 /* DayTableViewCell.swift */; };
@@ -32,6 +33,9 @@
 /* Begin PBXFileReference section */
 		200AA9171F769E0A00744743 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		200AA9191F76C83700744743 /* SetTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetTableViewCell.swift; sourceTree = "<group>"; };
+		2011C93C1F7E962500D7BA01 /* Database.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
+		2026F2A01F7E9F7D00388B51 /* MuscleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MuscleTableViewCell.swift; sourceTree = "<group>"; };
+		2026F2A21F7EA34300388B51 /* MuscleLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MuscleLog.swift; sourceTree = "<group>"; };
 		202852691F6AEB68006D2675 /* DayTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayTableViewController.swift; sourceTree = "<group>"; };
 		2028526B1F6AECB6006D2675 /* MusclesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusclesTableViewController.swift; sourceTree = "<group>"; };
 		2064557D1F755580000CB3FC /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
@@ -47,8 +51,6 @@
 		20AFB26B1F698F6F003C43C2 /* AddDayPopUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddDayPopUpViewController.swift; sourceTree = "<group>"; };
 		20CF75AE1F6D0AC200D4A865 /* AddLogPopUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddLogPopUpViewController.swift; sourceTree = "<group>"; };
 		20CF75B01F6D39C900D4A865 /* RoundCornerButtonUIButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundCornerButtonUIButton.swift; sourceTree = "<group>"; };
-		20CF75B31F6D616000D4A865 /* StaticMuscle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaticMuscle.swift; sourceTree = "<group>"; };
-		20CF75B81F6D61D800D4A865 /* StaticDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaticDB.swift; sourceTree = "<group>"; };
 		20CF75BC1F6D620D00D4A865 /* ExerciseLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseLog.swift; sourceTree = "<group>"; };
 		20CF75BE1F6D622200D4A865 /* SetLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetLog.swift; sourceTree = "<group>"; };
 		20CF75C01F6D68F000D4A865 /* DayTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayTableViewCell.swift; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 			children = (
 				20CF75C01F6D68F000D4A865 /* DayTableViewCell.swift */,
 				200AA9191F76C83700744743 /* SetTableViewCell.swift */,
+				2026F2A01F7E9F7D00388B51 /* MuscleTableViewCell.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -120,11 +123,11 @@
 			isa = PBXGroup;
 			children = (
 				20AFB25A1F6986D3003C43C2 /* WorkoutLog_0_2.xcdatamodeld */,
-				20CF75B31F6D616000D4A865 /* StaticMuscle.swift */,
-				20CF75B81F6D61D800D4A865 /* StaticDB.swift */,
+				2011C93C1F7E962500D7BA01 /* Database.swift */,
 				20CF75BC1F6D620D00D4A865 /* ExerciseLog.swift */,
 				20CF75BE1F6D622200D4A865 /* SetLog.swift */,
 				2064557F1F755C13000CB3FC /* DayLog.swift */,
+				2026F2A21F7EA34300388B51 /* MuscleLog.swift */,
 			);
 			name = CoreData;
 			sourceTree = "<group>";
@@ -229,7 +232,6 @@
 				20CF75B11F6D39C900D4A865 /* RoundCornerButtonUIButton.swift in Sources */,
 				20CF75BF1F6D622200D4A865 /* SetLog.swift in Sources */,
 				20AFB26C1F698F6F003C43C2 /* AddDayPopUpViewController.swift in Sources */,
-				20CF75B91F6D61D800D4A865 /* StaticDB.swift in Sources */,
 				20CF75AF1F6D0AC200D4A865 /* AddLogPopUpViewController.swift in Sources */,
 				20AFB26A1F698B5E003C43C2 /* HistoryTableViewController.swift in Sources */,
 				20AFB25C1F6986D3003C43C2 /* WorkoutLog_0_2.xcdatamodeld in Sources */,
@@ -238,8 +240,10 @@
 				2064557E1F755580000CB3FC /* DateExtension.swift in Sources */,
 				2028526A1F6AEB68006D2675 /* DayTableViewController.swift in Sources */,
 				206455801F755C13000CB3FC /* DayLog.swift in Sources */,
-				20CF75B41F6D616000D4A865 /* StaticMuscle.swift in Sources */,
+				2026F2A11F7E9F7D00388B51 /* MuscleTableViewCell.swift in Sources */,
 				20CF75BD1F6D620D00D4A865 /* ExerciseLog.swift in Sources */,
+				2026F2A31F7EA34300388B51 /* MuscleLog.swift in Sources */,
+				2011C93D1F7E962500D7BA01 /* Database.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
