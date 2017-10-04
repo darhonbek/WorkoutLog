@@ -39,13 +39,13 @@ class DayLog: NSManagedObject {
         }
     }
     
-    class func findOrCreateDayLog(matching date: Date, in context: NSManagedObjectContext) throws -> DayLog {
+    class func findOrCreateDayLog(matching date: Date, in context: NSManagedObjectContext) throws -> Bool {
         let request: NSFetchRequest<DayLog> = DayLog.fetchRequest()
         request.predicate = NSPredicate(format: "date = %@", date as NSDate)
         do {
             let matches = try context.fetch(request)
             if matches.count > 0 {
-                return matches[0]
+                return true
             }
         } catch {
             throw error
@@ -62,7 +62,7 @@ class DayLog: NSManagedObject {
             dayLog.number = 1
         }
         
-        return dayLog
+        return false
     }
     
     //Updates the numeration of all day logs

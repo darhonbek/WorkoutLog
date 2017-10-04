@@ -29,7 +29,13 @@ class AddDayPopUpViewController: UIViewController {
         date = DayLog.formatDateToDays(date: datePicker.date)
         let context = AppDelegate.viewContext
         do {
-            let _ = try? DayLog.findOrCreateDayLog(matching: date, in: context)
+            let dayAlreadyExist = try? DayLog.findOrCreateDayLog(matching: date, in: context)
+            if let flag = dayAlreadyExist {
+                if flag {
+                    print("lol")
+                    alert()
+                }
+            }
             try context.save()
             //reloads data in HistoryTableViewControllwer
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "loadDays"), object: nil)
@@ -38,5 +44,15 @@ class AddDayPopUpViewController: UIViewController {
             print (error)
         }
         dismiss(animated: true, completion: nil)
+    }
+}
+
+extension AddDayPopUpViewController {
+    
+    //MARK: - Alert
+    func alert() {
+        let alert = UIAlertController(title: "Date Already exists", message: "You can pick this date in the list", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
 }

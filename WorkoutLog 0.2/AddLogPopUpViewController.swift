@@ -17,10 +17,10 @@ class AddLogPopUpViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var doneButton: UIButton!
     
-    @IBOutlet weak var muscleTextField: UITextField!
-    @IBOutlet weak var exerciseTextField: UITextField!
-    @IBOutlet weak var repsTextField: UITextField!
-    @IBOutlet weak var weightTextField: UITextField!
+    @IBOutlet weak var muscleTextField: CustomTextField!
+    @IBOutlet weak var exerciseTextField: CustomTextField!
+    @IBOutlet weak var repsTextField: CustomTextField!
+    @IBOutlet weak var weightTextField: CustomTextField!
     
     @IBOutlet weak var musclePicker: UIPickerView!
     @IBOutlet weak var exercisePicker: UIPickerView!
@@ -175,7 +175,15 @@ class AddLogPopUpViewController: UIViewController, UITextFieldDelegate {
         deregisterFromKeyboardNotifications()
     }
     
-    func findNextResponder() {
+//    disables textfield manual changing
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if textField == muscleTextField || textField == exerciseTextField {
+            return false
+        }
+        return true
+    }
+    
+    @objc func findNextResponder() {
         if let textField = activeField {
             let _ = textFieldShouldReturn(textField)
         }
@@ -211,7 +219,7 @@ class AddLogPopUpViewController: UIViewController, UITextFieldDelegate {
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
     
-    func keyboardWasShown(notification: NSNotification){
+    @objc func keyboardWasShown(notification: NSNotification){
         //Need to calculate keyboard exact size due to Apple suggestions
         scrollView.isScrollEnabled = true
         var info = notification.userInfo!
@@ -230,7 +238,7 @@ class AddLogPopUpViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    func keyboardWillBeHidden(notification: NSNotification){
+    @objc func keyboardWillBeHidden(notification: NSNotification){
         //Once keyboard disappears, restore original positions
         var info = notification.userInfo!
         let keyboardSize = (info[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue.size
@@ -310,8 +318,21 @@ extension AddLogPopUpViewController: UIPickerViewDelegate, UIPickerViewDataSourc
     //MARK: - Alert
     func alert() {
         let alert = UIAlertController(title: "Some Fields\nAre Empty", message: "Please, fill all the fields", preferredStyle: UIAlertControllerStyle.alert)
+        
+        //MARK: - Temporary solution
+        //Currently this is the only way to dismiss the PopUpViewController
+        //Requires modification: add the cancel button on the view itself
+        
+        //discards and closes popUpView
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: {[weak self] action in
+            self?.closeVC()
+            }
+        ))
+        
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+            
         self.present(alert, animated: true, completion: nil)
+        
     }
 }
 
