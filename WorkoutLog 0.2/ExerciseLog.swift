@@ -15,7 +15,7 @@ class ExerciseLog: NSManagedObject {
             for i in 1..<array.count {
                 for j in 0 ..< i {
                     if array[i].number > array[j].number {
-                        swap(&array[i], &array[j])
+                        array.swapAt(i, j)
                     }
                 }
             }

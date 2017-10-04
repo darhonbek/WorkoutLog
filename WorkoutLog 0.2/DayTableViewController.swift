@@ -38,6 +38,7 @@ class DayTableViewController: UITableViewController {
     @objc private func updateTableData(){
         //MARK: Optimize
         //Very heavy fn call
+//        loadDayLog()
         loadExerciseLogs()
         tableView.reloadData()
     }
@@ -109,30 +110,28 @@ class DayTableViewController: UITableViewController {
         return cell
     }
     
-    /*
-     if editingStyle == .delete {
-     // Delete the row from the data source
-     if let setLogToDelete = tableView.cellForRow(at: indexPath) as? SetTableViewCell {
-     container?.viewContext.delete(setLogToDelete.setLog!)
-     try? container?.viewContext.save()
-     tableView.deleteRows(at: [indexPath], with: .fade)
-     //updates the rows enumeration
-     //try? DayLog.updateDayNumeration(in: container.viewContext)
-     //MARK: Warning - heavy fn call. Optimize to update only a single row
-     updateTableData()
-     }
-     
-     
-     
-     }
-    */
-    
-    // Override to support editing the table view.
 //    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
 //        if editingStyle == .delete {
 //            // Delete the row from the data source
-//            tableView.deleteRows(at: [indexPath], with: .fade)
-//        } 
+//            if let setLogToDelete = tableView.cellForRow(at: indexPath) as? SetTableViewCell {
+//                container?.viewContext.delete(setLogToDelete.setLog!)
+//                
+////                dayLog?.getExerciseArray()
+//                
+//                
+//                try? container?.viewContext.save()
+//                loadDayLog()
+//                tableView.deleteRows(at: [indexPath], with: .fade)
+//                updateTableData()
+//            }
+//        }
+//    }
+//    
+//    private func loadDayLog() {
+//        if let date = dayLog?.date,
+//            let context = container?.viewContext{
+//            dayLog = try? DayLog.findOrCreateDayLog(matching: date as Date, in: context)
+//        }
 //    }
 
 }
