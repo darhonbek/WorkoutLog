@@ -29,6 +29,9 @@ class HistoryTableViewController: UITableViewController {//, UITableViewDelegate
         //Very heavy fn call
         loadDayLogs()
         tableView.reloadData()
+//        if let dayLog = days.last {
+//            transitionToDayTVC(dayLog: dayLog)
+//        }
     }
     
     private func loadDayLogs() {
@@ -89,5 +92,11 @@ class HistoryTableViewController: UITableViewController {//, UITableViewDelegate
             //MARK: Warning - heavy fn call. Optimize to update only a single row
             updateTableData()
         }
+    }
+    
+    func transitionToDayTVC(dayLog: DayLog) {
+        let dayTVC:DayTableViewController = DayTableViewController()
+        dayTVC.dayLog = dayLog
+        self.present(dayTVC, animated: true, completion: nil)
     }
 }

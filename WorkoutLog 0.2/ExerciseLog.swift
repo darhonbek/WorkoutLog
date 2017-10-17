@@ -58,7 +58,7 @@ class ExerciseLog: NSManagedObject {
         
         let request: NSFetchRequest<DayLog> = DayLog.fetchRequest()
         if let date = dayLog.date {
-            request.predicate = NSPredicate(format: "date = %@", date)
+            request.predicate = NSPredicate(format: "date = %@", date as CVarArg)
             do {
                 let matches = try context.fetch(request)
                 if matches.count > 0 {

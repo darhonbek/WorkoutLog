@@ -16,6 +16,7 @@ class AddLogPopUpViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var scrollView: UIScrollView!
     
     @IBOutlet weak var doneButton: UIButton!
+    @IBOutlet weak var cancelButton: UIButton!
     
     @IBOutlet weak var muscleTextField: CustomTextField!
     @IBOutlet weak var exerciseTextField: CustomTextField!
@@ -81,8 +82,10 @@ class AddLogPopUpViewController: UIViewController, UITextFieldDelegate {
         initTextFieldTags()
         
         initMuscleList()
-        
-        doneButton.addBorder(side: .Top, color: .lightGray, width: 1.0)
+
+//        doneButton.addBorder(side: .Top, color: .lightGray, width: 1.0)
+//        cancelButton.addBorder(side: .Top, color: .lightGray, width: 1.0)
+//        cancelButton.addBorder(side: .Right, color: .lightGray, width: 1.0)
         
         popupView.layer.cornerRadius = 10
         popupView.layer.masksToBounds = true
@@ -123,8 +126,12 @@ class AddLogPopUpViewController: UIViewController, UITextFieldDelegate {
         AddLogPopUpViewController.recentPickedExercise = exercise
     }
     
-    //MARK: - Adding new log
     @IBAction func closePopUp(_ sender: UIButton) {
+        self.closeVC()
+    }
+    
+    //MARK: - Adding new log
+    @IBAction func saveLog(_ sender: UIButton) {
         if !(muscleTextField.text?.isEmpty)! &&
             !(exerciseTextField.text?.isEmpty)! &&
             !(repsTextField.text?.isEmpty)! &&
@@ -202,7 +209,7 @@ class AddLogPopUpViewController: UIViewController, UITextFieldDelegate {
         {
             // Not found, so remove keyboard
             textField.resignFirstResponder()
-            closePopUp(doneButton)
+            saveLog(doneButton)
         }
         return false
     }

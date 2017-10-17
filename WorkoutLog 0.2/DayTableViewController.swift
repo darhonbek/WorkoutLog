@@ -2,7 +2,7 @@
 //  DayTableViewController.swift
 //  WorkoutLog 0.2
 //
-//  Created by Darkhonbek Mamataliev on 914//17.
+//  Created by Darkhonbek Mamataliev on 9/14/17.
 //  Copyright © 2017 Darkhonbek Mamataliev. All rights reserved.
 //
 
@@ -13,16 +13,14 @@ class DayTableViewController: UITableViewController {
     
     @IBOutlet weak var navItem: UINavigationItem!
     public var container: NSPersistentContainer?
+    public var selectedRowLog: SetLog?
     public var dayLog: DayLog? {
         didSet {
             updateUI()
+            updateExerciseArray()
         }
     }
-    private var exercises: [ExerciseLog] {
-        get {
-            return (dayLog?.getExerciseArray()) ?? [ExerciseLog]()
-        }
-    }
+    private var exercises: [ExerciseLog] = [ExerciseLog]()
     
     private func updateUI() {
         if let title = dayLog?.number {
@@ -35,15 +33,21 @@ class DayTableViewController: UITableViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(updateTableData), name: NSNotification.Name(rawValue: "loadExercises"), object: nil)
     }
     
-    @objc private func updateTableData(){
+    @objc private func updateTableData() {
         //MARK: Optimize
         //Very heavy fn call
-//        loadDayLog()
-        loadExerciseLogs()
+        loadDayLog()
+        updateExerciseArray()
         tableView.reloadData()
     }
     
-    private func loadExerciseLogs() {
+    private func updateExerciseArray() {
+        if let array = dayLog?.getExerciseArray() {
+            exercises = array
+        }
+    }
+    
+    private func loadDayLog() {
         if let unwrappedDayLog = self.dayLog,
             let context = container?.viewContext{
             if let updatedDayLog = try? ExerciseLog.reloadDayLog(unwrappedDayLog, in: context) {
@@ -63,6 +67,11 @@ class DayTableViewController: UITableViewController {
             } else if identifier == "Muscle List" {
                 if let vc = segue.destination as? MusclesTableViewController {
                     vc.dayLog = dayLog
+                }
+            } else if identifier == "Edit log record" {
+                if let vc = segue.destination as? EditLogViewController {
+                    vc.setLog = selectedRowLog
+                    vc.context = container?.viewContext
                 }
             }
         }
@@ -110,28 +119,39 @@ class DayTableViewController: UITableViewController {
         return cell
     }
     
-//    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-//        if editingStyle == .delete {
-//            // Delete the row from the data source
-//            if let setLogToDelete = tableView.cellForRow(at: indexPath) as? SetTableViewCell {
-//                container?.viewContext.delete(setLogToDelete.setLog!)
-//                
-////                dayLog?.getExerciseArray()
-//                
-//                
-//                try? container?.viewContext.save()
-//                loadDayLog()
-//                tableView.deleteRows(at: [indexPath], with: .fade)
-//                updateTableData()
-//            }
-//        }
-//    }
-//    
-//    private func loadDayLog() {
-//        if let date = dayLog?.date,
-//            let context = container?.viewContext{
-//            dayLog = try? DayLog.findOrCreateDayLog(matching: date as Date, in: context)
-//        }
-//    }
-
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath)
+        if let setCell = cell as? SetTableViewCell {
+            selectedRowLog = setCell.setLog
+            let identifier = "Edit log record"
+            performSegue(withIdentifier: identifier, sender: setCell)
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            if let deleteCell = tableView.cellForRow(at: indexPath) as? SetTableViewCell {
+                if let setLogToDelete = deleteCell.setLog {
+                    
+                    exercises[indexPath.section].removeFromSets(setLogToDelete)
+                    container?.viewContext.delete(setLogToDelete)
+                    try? container?.viewContext.save()
+                    tableView.deleteRows(at: [indexPath], with: .fade)
+                    updateTableData()
+                    
+                    
+                }
+            }
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }

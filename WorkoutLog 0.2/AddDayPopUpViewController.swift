@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import UserNotifications
 
 class AddDayPopUpViewController: UIViewController {
     
@@ -19,7 +20,7 @@ class AddDayPopUpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         closePopUpWhenTappedAround()
-        doneButton.addBorder(side: .Top, color: .lightGray, width: 1.0)
+//        doneButton.addBorder(side: .Top, color: .lightGray, width: 1.0)
         popupView.layer.cornerRadius = 10
         popupView.layer.masksToBounds = true
         date = datePicker.date
@@ -29,14 +30,13 @@ class AddDayPopUpViewController: UIViewController {
         date = DayLog.formatDateToDays(date: datePicker.date)
         let context = AppDelegate.viewContext
         do {
-            let dayAlreadyExist = try? DayLog.findOrCreateDayLog(matching: date, in: context)
-            if let flag = dayAlreadyExist {
-                if flag {
-                    print("lol")
-                    alert()
-                }
+            let (_, dayAlreadyExist) = try DayLog.findOrCreateDayLog(matching: date, in: context)
+            if dayAlreadyExist {
+                alert()
             }
             try context.save()
+            //updates day enumeration
+            try? DayLog.updateDayNumeration(in: context)
             //reloads data in HistoryTableViewControllwer
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "loadDays"), object: nil)
         }
@@ -48,11 +48,14 @@ class AddDayPopUpViewController: UIViewController {
 }
 
 extension AddDayPopUpViewController {
+    private func presentViewController(alert: UIAlertController, animated flag: Bool, completion: (() -> Void)?) -> Void {
+        UIApplication.shared.keyWindow?.rootViewController?.present(alert, animated: flag, completion: completion)
+    }
     
     //MARK: - Alert
     func alert() {
         let alert = UIAlertController(title: "Date Already exists", message: "You can pick this date in the list", preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
+        presentViewController(alert: alert, animated: true, completion: nil)
     }
 }

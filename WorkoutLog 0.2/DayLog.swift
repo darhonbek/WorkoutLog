@@ -39,20 +39,20 @@ class DayLog: NSManagedObject {
         }
     }
     
-    class func findOrCreateDayLog(matching date: Date, in context: NSManagedObjectContext) throws -> Bool {
+    class func findOrCreateDayLog(matching date: Date, in context: NSManagedObjectContext) throws -> (DayLog, Bool) {
         let request: NSFetchRequest<DayLog> = DayLog.fetchRequest()
         request.predicate = NSPredicate(format: "date = %@", date as NSDate)
         do {
             let matches = try context.fetch(request)
             if matches.count > 0 {
-                return true
+                return (matches[0], true)
             }
         } catch {
             throw error
         }
         
         let dayLog = DayLog(context: context)
-        dayLog.date = date as NSDate
+        dayLog.date = date // as NSDate
         dayLog.exercises = NSSet()
         dayLog.muscles = NSSet()
         
@@ -62,13 +62,13 @@ class DayLog: NSManagedObject {
             dayLog.number = 1
         }
         
-        return false
+        return (dayLog, false)
     }
     
     //Updates the numeration of all day logs
     class func updateDayNumeration(in context: NSManagedObjectContext) throws {
         let request: NSFetchRequest<DayLog> = DayLog.fetchRequest()
-        let descriptor = NSSortDescriptor(key: "number", ascending: true)
+        let descriptor = NSSortDescriptor(key: "date", ascending: true)
         request.sortDescriptors = [descriptor]
         do {
             let days = try context.fetch(request)
