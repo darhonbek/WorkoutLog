@@ -9,11 +9,12 @@
 import UIKit
 import CoreData
 
-class HistoryTableViewController: UITableViewController {//, UITableViewDelegate {
+class HistoryTableViewController: UITableViewController {
     
     var days = Array<DayLog>()
     var container = AppDelegate.persistentContainer
     var selectedRow = 0
+    private var dayToProceed: DayLog?
     
     
     override func viewDidLoad() {
@@ -21,27 +22,16 @@ class HistoryTableViewController: UITableViewController {//, UITableViewDelegate
         tableView.delegate = self
         tableView.dataSource = self
         NotificationCenter.default.addObserver(self, selector: #selector(updateTableData), name: NSNotification.Name(rawValue: "loadDays"), object: nil)
-//        NotificationCenter.default.addObserver(self, selector: #selector(dayAdded), name: NSNotification.Name(rawValue: "Proceed to day info"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(proceedToDay), name: NSNotification.Name(rawValue: "Day exists, proceed to day info"), object: nil)
         loadDayLogs()
     }
-    
-//    @objc private func dayAdded() {
-//        for day in days {
-//            if day.date == AddDayPopUpViewController.dayLog?.date {
-//                AddDayPopUpViewController.dayLog?.number = day.number
-//                break
-//            }
-//        }
-//        print("lol")
-//        performSegue(withIdentifier: "Day information", sender: AddDayPopUpViewController.self)
-//    }
     
     @objc private func updateTableData(){
         //MARK: Optimize
         //Very heavy fn call
         loadDayLogs()
         tableView.reloadData()
-        
+        proceedToDay()
     }
     private func loadDayLogs() {
         let request: NSFetchRequest<DayLog> = DayLog.fetchRequest()
@@ -52,6 +42,18 @@ class HistoryTableViewController: UITableViewController {//, UITableViewDelegate
         context.performAndWait { [weak self] in
             if let days = try? context.fetch(request) {
                 self?.days = days
+            }
+        }
+    }
+    
+    @objc private func proceedToDay() {
+        if let date = AddDayPopUpViewController.date {
+            for day in days {
+                if day.date == date {
+                    dayToProceed = day
+                    performSegue(withIdentifier: "Day information", sender: self)
+                    break
+                }
             }
         }
     }
@@ -80,9 +82,9 @@ class HistoryTableViewController: UITableViewController {//, UITableViewDelegate
                 if let dtvc = segue.destination as? DayTableViewController {
                     if let dayCell = sender as? DayTableViewCell {
                         dtvc.dayLog = dayCell.dayLog ?? DayLog()
-                    } else {
-                        if let _ = sender as? AddDayPopUpViewController {
-                            dtvc.dayLog = AddDayPopUpViewController.dayLog
+                    }  else {
+                        if let htvc = sender as? HistoryTableViewController {
+                            dtvc.dayLog = htvc.dayToProceed ?? DayLog()
                         }
                     }
                 }

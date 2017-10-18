@@ -17,12 +17,11 @@ class AddDayPopUpViewController: UIViewController {
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var doneButton: UIButton!
     
-    public static var dayLog: DayLog?
+    public static var date: Date?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         closePopUpWhenTappedAround()
-//        doneButton.addBorder(side: .Top, color: .lightGray, width: 1.0)
         popupView.layer.cornerRadius = 10
         popupView.layer.masksToBounds = true
         date = datePicker.date
@@ -33,9 +32,10 @@ class AddDayPopUpViewController: UIViewController {
         let context = AppDelegate.viewContext
         do {
             let (temp, dayAlreadyExist) = try DayLog.findOrCreateDayLog(matching: date, in: context)
-            AddDayPopUpViewController.dayLog = temp
+            AddDayPopUpViewController.date = temp.date
             if dayAlreadyExist {
                 alert()
+//                Day exists, proceed to day info
             }
             
             try context.save()
@@ -45,7 +45,6 @@ class AddDayPopUpViewController: UIViewController {
             //reloads data in HistoryTableViewControllwer
             
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "loadDays"), object: nil)
-//            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "Proceed to day info"), object: nil)
         }
         catch {
             print (error)
@@ -61,8 +60,15 @@ extension AddDayPopUpViewController {
     
     //MARK: - Alert
     func alert() {
-        let alert = UIAlertController(title: "Date Already exists", message: "You can pick this date in the list", preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+        let alert = UIAlertController(title: "Date Already exists", message: "You will be proceeded to that day", preferredStyle: UIAlertControllerStyle.alert)
+        
+        alert.addAction(UIAlertAction(title: "OK",
+                                      style: UIAlertActionStyle.default,
+                                      handler: {
+                                        (alert: UIAlertAction!) in
+                                         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "Day exists, proceed to day info"), object: nil)
+                                        }))
+        
         presentViewController(alert: alert, animated: true, completion: nil)
     }
 }

@@ -25,7 +25,7 @@ class DayTableViewController: UITableViewController {
     
     private func updateUI() {
         if let title = dayLog?.number {
-            navItem.title = String(title)
+            navItem.title = "Day " + String(title)
         }
     }
 
