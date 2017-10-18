@@ -8,6 +8,7 @@
 
 import CoreData
 import UIKit
+import Foundation
 
 class DayTableViewController: UITableViewController {
     
@@ -43,13 +44,13 @@ class DayTableViewController: UITableViewController {
     
     private func updateExerciseArray() {
         if let array = dayLog?.getExerciseArray() {
-            exercises = array
+            exercises = ExerciseLog.sortExercises(array)
         }
     }
     
     private func loadDayLog() {
         if let unwrappedDayLog = self.dayLog,
-            let context = container?.viewContext{
+            let context = container?.viewContext {
             if let updatedDayLog = try? ExerciseLog.reloadDayLog(unwrappedDayLog, in: context) {
                 self.dayLog = updatedDayLog
             }
@@ -133,25 +134,44 @@ class DayTableViewController: UITableViewController {
             if let deleteCell = tableView.cellForRow(at: indexPath) as? SetTableViewCell {
                 if let setLogToDelete = deleteCell.setLog {
                     
-                    exercises[indexPath.section].removeFromSets(setLogToDelete)
+                    var flag = false
                     container?.viewContext.delete(setLogToDelete)
+                    exercises[indexPath.section].removeFromSets(setLogToDelete)
+                    if let temp = exercises[indexPath.section].sets?.count {
+                        if temp == 0 {
+                            flag = true
+                            container?.viewContext.delete(
+                                exercises[indexPath.section]
+                            )
+                            dayLog?.removeFromExercises(exercises[indexPath.section])
+                            exercises.remove(at: indexPath.section)
+                        }
+                    }
                     try? container?.viewContext.save()
-                    tableView.deleteRows(at: [indexPath], with: .fade)
+                    
+                    tableView.beginUpdates()
+                    tableView.deleteRows(at: [indexPath], with: .left)
+                    if flag {
+                        var indexSet = IndexSet()
+                        indexSet.insert(indexPath.section)
+                        tableView.deleteSections(indexSet, with: .left)
+                    }
+                    tableView.endUpdates()
+                    
+                    //MARK: - modify to sort logs after deletion
                     updateTableData()
-                    
-                    
                 }
             }
         }
     }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
 }
+
+
+
+
+
+
+
+
+

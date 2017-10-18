@@ -10,15 +10,25 @@ import Foundation
 import CoreData
 
 class ExerciseLog: NSManagedObject {
+    
     public func getSortedSetArray() -> [SetLog]{
         if var array = sets?.allObjects as? [SetLog] {
-            for i in 1..<array.count {
+            for i in 0..<array.count {
                 for j in 0 ..< i {
                     if array[i].number > array[j].number {
                         array.swapAt(i, j)
                     }
                 }
             }
+            
+            //start - updating set enumeration
+            var number: Int32 = Int32(array.count)
+            for set in array {
+                set.number = number
+                number -= 1
+            }
+            //end - updating
+            
             return array
         }
         return [SetLog]()
@@ -31,7 +41,6 @@ class ExerciseLog: NSManagedObject {
                 let setLog = SetLog(context: context)
                 let numberOfSets = exercise.sets?.count ?? 0
                 setLog.number = Int32(numberOfSets + 1)
-                print(setLog.number)
                 setLog.reps = reps
                 setLog.weight = weight
                 setLog.exercise = exercise
@@ -71,5 +80,11 @@ class ExerciseLog: NSManagedObject {
         }
         return nil
         
+    }
+    
+    class func sortExercises(_ exercises: [ExerciseLog]) -> [ExerciseLog] {
+        return exercises.sorted(by: { (a, b) -> Bool in
+            return a.name! < b.name!
+        })
     }
 }

@@ -10,14 +10,15 @@
 		200AA9181F769E0A00744743 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200AA9171F769E0A00744743 /* UIViewControllerExtension.swift */; };
 		200AA91A1F76C83700744743 /* SetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200AA9191F76C83700744743 /* SetTableViewCell.swift */; };
 		2011C93D1F7E962500D7BA01 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2011C93C1F7E962500D7BA01 /* Database.swift */; };
+		201CCE5C1F9119210027B843 /* EditLogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201CCE5B1F9119210027B843 /* EditLogViewController.swift */; };
 		2026F2A11F7E9F7D00388B51 /* MuscleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2026F2A01F7E9F7D00388B51 /* MuscleTableViewCell.swift */; };
 		2026F2A31F7EA34300388B51 /* MuscleLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2026F2A21F7EA34300388B51 /* MuscleLog.swift */; };
 		2028526A1F6AEB68006D2675 /* DayTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202852691F6AEB68006D2675 /* DayTableViewController.swift */; };
 		2028526C1F6AECB6006D2675 /* MusclesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2028526B1F6AECB6006D2675 /* MusclesTableViewController.swift */; };
-		204E06881F84B93A00D2EA54 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204E06871F84B93A00D2EA54 /* CustomTextField.swift */; };
-		204E068A1F84DA8200D2EA54 /* AddLogAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204E06891F84DA8200D2EA54 /* AddLogAlertViewController.swift */; };
+		2052D1781F8E0FE300980F8E /* AlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2052D1771F8E0FE300980F8E /* AlertHelper.swift */; };
 		2064557E1F755580000CB3FC /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2064557D1F755580000CB3FC /* DateExtension.swift */; };
 		206455801F755C13000CB3FC /* DayLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2064557F1F755C13000CB3FC /* DayLog.swift */; };
+		20AD5AA31F8FB97700405B86 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AD5AA21F8FB97700405B86 /* CustomTextField.swift */; };
 		20AFB2541F6986D3003C43C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AFB2531F6986D3003C43C2 /* AppDelegate.swift */; };
 		20AFB2591F6986D3003C43C2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20AFB2571F6986D3003C43C2 /* Main.storyboard */; };
 		20AFB25C1F6986D3003C43C2 /* WorkoutLog_0_2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 20AFB25A1F6986D3003C43C2 /* WorkoutLog_0_2.xcdatamodeld */; };
@@ -36,14 +37,15 @@
 		200AA9171F769E0A00744743 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		200AA9191F76C83700744743 /* SetTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetTableViewCell.swift; sourceTree = "<group>"; };
 		2011C93C1F7E962500D7BA01 /* Database.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
+		201CCE5B1F9119210027B843 /* EditLogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditLogViewController.swift; sourceTree = "<group>"; };
 		2026F2A01F7E9F7D00388B51 /* MuscleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MuscleTableViewCell.swift; sourceTree = "<group>"; };
 		2026F2A21F7EA34300388B51 /* MuscleLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MuscleLog.swift; sourceTree = "<group>"; };
 		202852691F6AEB68006D2675 /* DayTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayTableViewController.swift; sourceTree = "<group>"; };
 		2028526B1F6AECB6006D2675 /* MusclesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusclesTableViewController.swift; sourceTree = "<group>"; };
-		204E06871F84B93A00D2EA54 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
-		204E06891F84DA8200D2EA54 /* AddLogAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLogAlertViewController.swift; sourceTree = "<group>"; };
+		2052D1771F8E0FE300980F8E /* AlertHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertHelper.swift; sourceTree = "<group>"; };
 		2064557D1F755580000CB3FC /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		2064557F1F755C13000CB3FC /* DayLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayLog.swift; sourceTree = "<group>"; };
+		20AD5AA21F8FB97700405B86 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		20AFB2501F6986D3003C43C2 /* WorkoutLog 0.2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WorkoutLog 0.2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		20AFB2531F6986D3003C43C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		20AFB2581F6986D3003C43C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -112,13 +114,14 @@
 		20AFB2681F6986ED003C43C2 /* Supporting files */ = {
 			isa = PBXGroup;
 			children = (
-				20AFB2531F6986D3003C43C2 /* AppDelegate.swift */,
-				2064557D1F755580000CB3FC /* DateExtension.swift */,
+				20AD5AA21F8FB97700405B86 /* CustomTextField.swift */,
+				2052D1771F8E0FE300980F8E /* AlertHelper.swift */,
 				200AA9171F769E0A00744743 /* UIViewControllerExtension.swift */,
+				2064557D1F755580000CB3FC /* DateExtension.swift */,
+				20AFB2531F6986D3003C43C2 /* AppDelegate.swift */,
 				20AFB25D1F6986D3003C43C2 /* Assets.xcassets */,
 				20AFB25F1F6986D3003C43C2 /* LaunchScreen.storyboard */,
 				20AFB2621F6986D3003C43C2 /* Info.plist */,
-				204E06871F84B93A00D2EA54 /* CustomTextField.swift */,
 			);
 			name = "Supporting files";
 			path = "WorkoutLog 0.2";
@@ -144,8 +147,8 @@
 				20AFB26B1F698F6F003C43C2 /* AddDayPopUpViewController.swift */,
 				202852691F6AEB68006D2675 /* DayTableViewController.swift */,
 				20CF75AE1F6D0AC200D4A865 /* AddLogPopUpViewController.swift */,
+				201CCE5B1F9119210027B843 /* EditLogViewController.swift */,
 				2028526B1F6AECB6006D2675 /* MusclesTableViewController.swift */,
-				204E06891F84DA8200D2EA54 /* AddLogAlertViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -233,13 +236,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				204E068A1F84DA8200D2EA54 /* AddLogAlertViewController.swift in Sources */,
 				20CF75C11F6D68F000D4A865 /* DayTableViewCell.swift in Sources */,
 				2028526C1F6AECB6006D2675 /* MusclesTableViewController.swift in Sources */,
 				200AA9181F769E0A00744743 /* UIViewControllerExtension.swift in Sources */,
 				20CF75B11F6D39C900D4A865 /* RoundCornerButtonUIButton.swift in Sources */,
+				20AD5AA31F8FB97700405B86 /* CustomTextField.swift in Sources */,
 				20CF75BF1F6D622200D4A865 /* SetLog.swift in Sources */,
-				204E06881F84B93A00D2EA54 /* CustomTextField.swift in Sources */,
 				20AFB26C1F698F6F003C43C2 /* AddDayPopUpViewController.swift in Sources */,
 				20CF75AF1F6D0AC200D4A865 /* AddLogPopUpViewController.swift in Sources */,
 				20AFB26A1F698B5E003C43C2 /* HistoryTableViewController.swift in Sources */,
@@ -248,9 +250,11 @@
 				200AA91A1F76C83700744743 /* SetTableViewCell.swift in Sources */,
 				2064557E1F755580000CB3FC /* DateExtension.swift in Sources */,
 				2028526A1F6AEB68006D2675 /* DayTableViewController.swift in Sources */,
+				201CCE5C1F9119210027B843 /* EditLogViewController.swift in Sources */,
 				206455801F755C13000CB3FC /* DayLog.swift in Sources */,
 				2026F2A11F7E9F7D00388B51 /* MuscleTableViewCell.swift in Sources */,
 				20CF75BD1F6D620D00D4A865 /* ExerciseLog.swift in Sources */,
+				2052D1781F8E0FE300980F8E /* AlertHelper.swift in Sources */,
 				2026F2A31F7EA34300388B51 /* MuscleLog.swift in Sources */,
 				2011C93D1F7E962500D7BA01 /* Database.swift in Sources */,
 			);
@@ -325,7 +329,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -375,7 +379,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";

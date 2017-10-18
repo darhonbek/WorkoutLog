@@ -21,19 +21,28 @@ class HistoryTableViewController: UITableViewController {//, UITableViewDelegate
         tableView.delegate = self
         tableView.dataSource = self
         NotificationCenter.default.addObserver(self, selector: #selector(updateTableData), name: NSNotification.Name(rawValue: "loadDays"), object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(dayAdded), name: NSNotification.Name(rawValue: "Proceed to day info"), object: nil)
         loadDayLogs()
     }
+    
+//    @objc private func dayAdded() {
+//        for day in days {
+//            if day.date == AddDayPopUpViewController.dayLog?.date {
+//                AddDayPopUpViewController.dayLog?.number = day.number
+//                break
+//            }
+//        }
+//        print("lol")
+//        performSegue(withIdentifier: "Day information", sender: AddDayPopUpViewController.self)
+//    }
     
     @objc private func updateTableData(){
         //MARK: Optimize
         //Very heavy fn call
         loadDayLogs()
         tableView.reloadData()
-//        if let dayLog = days.last {
-//            transitionToDayTVC(dayLog: dayLog)
-//        }
+        
     }
-    
     private func loadDayLogs() {
         let request: NSFetchRequest<DayLog> = DayLog.fetchRequest()
         let descriptor = NSSortDescriptor(key: "number", ascending: false)
@@ -71,6 +80,10 @@ class HistoryTableViewController: UITableViewController {//, UITableViewDelegate
                 if let dtvc = segue.destination as? DayTableViewController {
                     if let dayCell = sender as? DayTableViewCell {
                         dtvc.dayLog = dayCell.dayLog ?? DayLog()
+                    } else {
+                        if let _ = sender as? AddDayPopUpViewController {
+                            dtvc.dayLog = AddDayPopUpViewController.dayLog
+                        }
                     }
                 }
             }
@@ -80,23 +93,38 @@ class HistoryTableViewController: UITableViewController {//, UITableViewDelegate
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             
+            tableView.beginUpdates()
+            
             let dayLogToDelete = days[indexPath.row]
             days.remove(at: indexPath.row)
             container.viewContext.delete(dayLogToDelete)
             try? container.viewContext.save()
-            tableView.deleteRows(at: [indexPath], with: .fade)
-            
+            tableView.deleteRows(at: [indexPath], with: .left)
             //updates the rows enumeration
             try? DayLog.updateDayNumeration(in: container.viewContext)
+            tableView.endUpdates()
             
             //MARK: Warning - heavy fn call. Optimize to update only a single row
             updateTableData()
         }
     }
-    
-    func transitionToDayTVC(dayLog: DayLog) {
-        let dayTVC:DayTableViewController = DayTableViewController()
-        dayTVC.dayLog = dayLog
-        self.present(dayTVC, animated: true, completion: nil)
-    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

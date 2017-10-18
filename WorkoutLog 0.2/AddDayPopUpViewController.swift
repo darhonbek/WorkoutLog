@@ -17,6 +17,8 @@ class AddDayPopUpViewController: UIViewController {
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var doneButton: UIButton!
     
+    public static var dayLog: DayLog?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         closePopUpWhenTappedAround()
@@ -30,15 +32,20 @@ class AddDayPopUpViewController: UIViewController {
         date = DayLog.formatDateToDays(date: datePicker.date)
         let context = AppDelegate.viewContext
         do {
-            let (_, dayAlreadyExist) = try DayLog.findOrCreateDayLog(matching: date, in: context)
+            let (temp, dayAlreadyExist) = try DayLog.findOrCreateDayLog(matching: date, in: context)
+            AddDayPopUpViewController.dayLog = temp
             if dayAlreadyExist {
                 alert()
             }
+            
             try context.save()
             //updates day enumeration
+            
             try? DayLog.updateDayNumeration(in: context)
             //reloads data in HistoryTableViewControllwer
+            
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "loadDays"), object: nil)
+//            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "Proceed to day info"), object: nil)
         }
         catch {
             print (error)
