@@ -31,6 +31,8 @@ class DayTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        updateTableData()
+        Database.loadData()
         NotificationCenter.default.addObserver(self, selector: #selector(updateTableData), name: NSNotification.Name(rawValue: "loadExercises"), object: nil)
     }
     
@@ -67,7 +69,11 @@ class DayTableViewController: UITableViewController {
                 }
             } else if identifier == "Muscle List" {
                 if let vc = segue.destination as? MusclesTableViewController {
+                    if let context = container?.viewContext {
+                        self.dayLog?.updateMuscles(in: context)
+                    }
                     vc.dayLog = dayLog
+                    vc.context = container?.viewContext
                 }
             } else if identifier == "Edit log record" {
                 if let vc = segue.destination as? EditLogViewController {

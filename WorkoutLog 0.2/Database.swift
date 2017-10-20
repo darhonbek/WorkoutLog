@@ -25,7 +25,7 @@ class Database {
         ]
         for (muscle, exeriseArray) in muscles {
             for exercise in exeriseArray {
-                exercises[exercise]?.append(muscle)
+                exercises[exercise] = [muscle]
             }
         }
     }

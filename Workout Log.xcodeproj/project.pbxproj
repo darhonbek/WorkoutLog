@@ -46,7 +46,7 @@
 		2064557D1F755580000CB3FC /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		2064557F1F755C13000CB3FC /* DayLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayLog.swift; sourceTree = "<group>"; };
 		20AD5AA21F8FB97700405B86 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
-		20AFB2501F6986D3003C43C2 /* WorkoutLog 0.2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WorkoutLog 0.2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		20AFB2501F6986D3003C43C2 /* Workout Log.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Workout Log.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		20AFB2531F6986D3003C43C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		20AFB2581F6986D3003C43C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		20AFB25B1F6986D3003C43C2 /* WorkoutLog_0_2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WorkoutLog_0_2.xcdatamodel; sourceTree = "<group>"; };
@@ -95,7 +95,7 @@
 		20AFB2511F6986D3003C43C2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				20AFB2501F6986D3003C43C2 /* WorkoutLog 0.2.app */,
+				20AFB2501F6986D3003C43C2 /* Workout Log.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -165,9 +165,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		20AFB24F1F6986D3003C43C2 /* WorkoutLog 0.2 */ = {
+		20AFB24F1F6986D3003C43C2 /* Workout Log */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 20AFB2651F6986D3003C43C2 /* Build configuration list for PBXNativeTarget "WorkoutLog 0.2" */;
+			buildConfigurationList = 20AFB2651F6986D3003C43C2 /* Build configuration list for PBXNativeTarget "Workout Log" */;
 			buildPhases = (
 				20AFB24C1F6986D3003C43C2 /* Sources */,
 				20AFB24D1F6986D3003C43C2 /* Frameworks */,
@@ -177,9 +177,9 @@
 			);
 			dependencies = (
 			);
-			name = "WorkoutLog 0.2";
+			name = "Workout Log";
 			productName = "WorkoutLog 0.2";
-			productReference = 20AFB2501F6986D3003C43C2 /* WorkoutLog 0.2.app */;
+			productReference = 20AFB2501F6986D3003C43C2 /* Workout Log.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -200,7 +200,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 20AFB24B1F6986D3003C43C2 /* Build configuration list for PBXProject "WorkoutLog 0.2" */;
+			buildConfigurationList = 20AFB24B1F6986D3003C43C2 /* Build configuration list for PBXProject "Workout Log" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -213,7 +213,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				20AFB24F1F6986D3003C43C2 /* WorkoutLog 0.2 */,
+				20AFB24F1F6986D3003C43C2 /* Workout Log */,
 			);
 		};
 /* End PBXProject section */
@@ -335,6 +335,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 			};
 			name = Debug;
 		};
@@ -383,6 +384,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -420,7 +422,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		20AFB24B1F6986D3003C43C2 /* Build configuration list for PBXProject "WorkoutLog 0.2" */ = {
+		20AFB24B1F6986D3003C43C2 /* Build configuration list for PBXProject "Workout Log" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				20AFB2631F6986D3003C43C2 /* Debug */,
@@ -429,7 +431,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		20AFB2651F6986D3003C43C2 /* Build configuration list for PBXNativeTarget "WorkoutLog 0.2" */ = {
+		20AFB2651F6986D3003C43C2 /* Build configuration list for PBXNativeTarget "Workout Log" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				20AFB2661F6986D3003C43C2 /* Debug */,

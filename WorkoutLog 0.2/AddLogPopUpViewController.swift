@@ -326,10 +326,6 @@ extension AddLogPopUpViewController: UIPickerViewDelegate, UIPickerViewDataSourc
     func alert() {
         let alert = UIAlertController(title: "Some Fields\nAre Empty", message: "Please, fill all the fields", preferredStyle: UIAlertControllerStyle.alert)
         
-        //MARK: - Temporary solution
-        //Currently this is the only way to dismiss the PopUpViewController
-        //Requires modification: add the cancel button on the view itself
-        
         //discards and closes popUpView
         alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: {[weak self] action in
             self?.closeVC()

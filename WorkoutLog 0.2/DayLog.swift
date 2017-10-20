@@ -87,22 +87,36 @@ class DayLog: NSManagedObject {
             throw error
         }
     }
+    
+    public func updateMuscles(in context: NSManagedObjectContext) {
+        let exercises = self.getExerciseArray()
+        var muscleNames = [String]()
+        
+        //first clear all muscles from dayLog
+        if let set = self.muscles {
+            self.removeFromMuscles(set)
+        }
+
+        for e in exercises {
+//            print(e)
+            if let exName = e.name {
+                if let mArray = Database.exercises[exName] {
+                    for m in mArray {
+                        if !muscleNames.contains(m) {
+                            muscleNames.append(m)
+                        }
+                    }
+                }
+            }
+        }
+        let muscleSet = NSSet()
+        for m in muscleNames {
+            let muscleLog = MuscleLog(context: context)
+            muscleLog.day = self
+            muscleLog.name = m
+            muscleSet.adding(muscleLog)
+        }
+        self.addToMuscles(muscleSet)
+        try? context.save()
+    }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

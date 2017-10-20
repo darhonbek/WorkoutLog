@@ -82,9 +82,11 @@ class HistoryTableViewController: UITableViewController {
                 if let dtvc = segue.destination as? DayTableViewController {
                     if let dayCell = sender as? DayTableViewCell {
                         dtvc.dayLog = dayCell.dayLog ?? DayLog()
+                        dtvc.container = container
                     }  else {
                         if let htvc = sender as? HistoryTableViewController {
                             dtvc.dayLog = htvc.dayToProceed ?? DayLog()
+                            dtvc.container = container
                         }
                     }
                 }

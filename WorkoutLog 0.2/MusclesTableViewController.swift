@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class MusclesTableViewController: UITableViewController {
     
@@ -15,6 +16,7 @@ class MusclesTableViewController: UITableViewController {
             updateUI()
         }
     }
+    public var context: NSManagedObjectContext?
     
     var muscleList: [String] = [String()]
     
@@ -23,6 +25,9 @@ class MusclesTableViewController: UITableViewController {
     }
     
     func reloadMuscleList() {
+        if let context = context {
+            dayLog?.updateMuscles(in: context)
+        }
         muscleList.removeAll()
         if let arr = dayLog?.getMuscleArray() {
             for muscle in arr {

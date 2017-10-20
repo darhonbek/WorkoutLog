@@ -497,7 +497,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter number of reps" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tKJ-LW-ZiL">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter number of reps" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tKJ-LW-ZiL" customClass="CustomTextField" customModule="WorkoutLog_0_2" customModuleProvider="target">
                                         <rect key="frame" x="60" y="34" width="160" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="160" id="DoM-Xw-HvA"/>
@@ -517,7 +517,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter weight" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Kmg-7h-D3v" userLabel="Enter weight">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter weight" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Kmg-7h-D3v" userLabel="Enter weight" customClass="CustomTextField" customModule="WorkoutLog_0_2" customModuleProvider="target">
                                         <rect key="frame" x="60" y="34" width="160" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="160" id="bzu-md-dLI"/>
@@ -552,7 +552,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Edit log" id="mJD-8t-L1g">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="IaI-yd-Ncp">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="IaI-yd-Ncp">
                             <connections>
                                 <action selector="saveData:" destination="vLR-vU-GZI" id="TjF-KN-ywB"/>
                             </connections>
@@ -560,6 +560,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="repsTextField" destination="tKJ-LW-ZiL" id="PB2-vs-dGI"/>
+                        <outlet property="saveButton" destination="IaI-yd-Ncp" id="oUs-Fr-dMI"/>
                         <outlet property="weightTextField" destination="Kmg-7h-D3v" id="hAC-5n-5wx"/>
                     </connections>
                 </viewController>

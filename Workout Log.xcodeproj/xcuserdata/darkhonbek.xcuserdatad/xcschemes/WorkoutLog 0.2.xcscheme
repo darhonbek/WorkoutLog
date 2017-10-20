@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "20AFB24F1F6986D3003C43C2"
-               BuildableName = "WorkoutLog 0.2.app"
-               BlueprintName = "WorkoutLog 0.2"
-               ReferencedContainer = "container:WorkoutLog 0.2.xcodeproj">
+               BuildableName = "Workout Log.app"
+               BlueprintName = "Workout Log"
+               ReferencedContainer = "container:Workout Log.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -34,9 +34,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "20AFB24F1F6986D3003C43C2"
-            BuildableName = "WorkoutLog 0.2.app"
-            BlueprintName = "WorkoutLog 0.2"
-            ReferencedContainer = "container:WorkoutLog 0.2.xcodeproj">
+            BuildableName = "Workout Log.app"
+            BlueprintName = "Workout Log"
+            ReferencedContainer = "container:Workout Log.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -58,9 +58,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "20AFB24F1F6986D3003C43C2"
-            BuildableName = "WorkoutLog 0.2.app"
-            BlueprintName = "WorkoutLog 0.2"
-            ReferencedContainer = "container:WorkoutLog 0.2.xcodeproj">
+            BuildableName = "Workout Log.app"
+            BlueprintName = "Workout Log"
+            ReferencedContainer = "container:Workout Log.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -77,9 +77,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "20AFB24F1F6986D3003C43C2"
-            BuildableName = "WorkoutLog 0.2.app"
-            BlueprintName = "WorkoutLog 0.2"
-            ReferencedContainer = "container:WorkoutLog 0.2.xcodeproj">
+            BuildableName = "Workout Log.app"
+            BlueprintName = "Workout Log"
+            ReferencedContainer = "container:Workout Log.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
