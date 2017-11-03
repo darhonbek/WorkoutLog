@@ -31,6 +31,7 @@
 		20CF75BD1F6D620D00D4A865 /* ExerciseLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CF75BC1F6D620D00D4A865 /* ExerciseLog.swift */; };
 		20CF75BF1F6D622200D4A865 /* SetLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CF75BE1F6D622200D4A865 /* SetLog.swift */; };
 		20CF75C11F6D68F000D4A865 /* DayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CF75C01F6D68F000D4A865 /* DayTableViewCell.swift */; };
+		20F8E17C1FAC7F8A00402A7A /* AddLogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F8E17B1FAC7F8A00402A7A /* AddLogViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		20CF75BC1F6D620D00D4A865 /* ExerciseLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseLog.swift; sourceTree = "<group>"; };
 		20CF75BE1F6D622200D4A865 /* SetLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetLog.swift; sourceTree = "<group>"; };
 		20CF75C01F6D68F000D4A865 /* DayTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayTableViewCell.swift; sourceTree = "<group>"; };
+		20F8E17B1FAC7F8A00402A7A /* AddLogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLogViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				20CF75B51F6D617000D4A865 /* CoreData */,
 				20CF75B61F6D618700D4A865 /* Controllers */,
 				200AA9161F768ACB00744743 /* Cells */,
+				20F8E17A1FAC7F1100402A7A /* Views */,
 				20CF75B71F6D61AA00D4A865 /* UI-related */,
 			);
 			path = "WorkoutLog 0.2";
@@ -160,6 +163,14 @@
 				20CF75B01F6D39C900D4A865 /* RoundCornerButtonUIButton.swift */,
 			);
 			name = "UI-related";
+			sourceTree = "<group>";
+		};
+		20F8E17A1FAC7F1100402A7A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				20F8E17B1FAC7F8A00402A7A /* AddLogViewController.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -247,6 +258,7 @@
 				20AFB26A1F698B5E003C43C2 /* HistoryTableViewController.swift in Sources */,
 				20AFB25C1F6986D3003C43C2 /* WorkoutLog_0_2.xcdatamodeld in Sources */,
 				20AFB2541F6986D3003C43C2 /* AppDelegate.swift in Sources */,
+				20F8E17C1FAC7F8A00402A7A /* AddLogViewController.swift in Sources */,
 				200AA91A1F76C83700744743 /* SetTableViewCell.swift in Sources */,
 				2064557E1F755580000CB3FC /* DateExtension.swift in Sources */,
 				2028526A1F6AEB68006D2675 /* DayTableViewController.swift in Sources */,

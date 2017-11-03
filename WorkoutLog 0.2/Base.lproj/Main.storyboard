@@ -14,13 +14,13 @@
         <!--History-->
         <scene sceneID="c7g-Cp-CEd">
             <objects>
-                <tableViewController id="tyL-7G-eNv" customClass="HistoryTableViewController" customModule="WorkoutLog_0_2" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="tyL-7G-eNv" customClass="HistoryTableViewController" customModule="Workout_Log" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" sectionHeaderHeight="28" sectionFooterHeight="28" id="3sc-GP-5Lo">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="dayLog" rowHeight="70" id="Fu8-gQ-evH" customClass="DayTableViewCell" customModule="WorkoutLog_0_2" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="dayLog" rowHeight="70" id="Fu8-gQ-evH" customClass="DayTableViewCell" customModule="Workout_Log" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="320" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Fu8-gQ-evH" id="1kD-j6-m3C">
@@ -70,13 +70,13 @@
         <!--Day #-->
         <scene sceneID="ozK-aX-rSI">
             <objects>
-                <tableViewController modalTransitionStyle="flipHorizontal" id="4Ge-aE-SKk" customClass="DayTableViewController" customModule="WorkoutLog_0_2" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController modalTransitionStyle="flipHorizontal" id="4Ge-aE-SKk" customClass="DayTableViewController" customModule="Workout_Log" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="pk9-41-dE5">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="setLog" id="oX2-Vy-daR" customClass="SetTableViewCell" customModule="WorkoutLog_0_2" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="setLog" id="oX2-Vy-daR" customClass="SetTableViewCell" customModule="Workout_Log" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oX2-Vy-daR" id="lXe-Tv-WZD">
@@ -168,7 +168,7 @@
         <!--Add Day Pop Up View Controller-->
         <scene sceneID="pxV-Sx-ohW">
             <objects>
-                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="qKz-De-mGR" customClass="AddDayPopUpViewController" customModule="WorkoutLog_0_2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="qKz-De-mGR" customClass="AddDayPopUpViewController" customModule="Workout_Log" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6AJ-JK-kk0"/>
                         <viewControllerLayoutGuide type="bottom" id="UI7-55-BtE"/>
@@ -247,13 +247,13 @@
         <!--Trained muscles-->
         <scene sceneID="Lzl-Wg-ych">
             <objects>
-                <tableViewController id="JiG-ly-hM2" customClass="MusclesTableViewController" customModule="WorkoutLog_0_2" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="JiG-ly-hM2" customClass="MusclesTableViewController" customModule="Workout_Log" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="75" sectionHeaderHeight="28" sectionFooterHeight="28" id="fz9-5Y-pqH">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="muscleLog" textLabel="qXk-jJ-O0w" rowHeight="70" style="IBUITableViewCellStyleDefault" id="xgI-Qh-S1Z" userLabel="muscleLog" customClass="MuscleTableViewCell" customModule="WorkoutLog_0_2" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="muscleLog" textLabel="qXk-jJ-O0w" rowHeight="70" style="IBUITableViewCellStyleDefault" id="xgI-Qh-S1Z" userLabel="muscleLog" customClass="MuscleTableViewCell" customModule="Workout_Log" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="320" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xgI-Qh-S1Z" id="lCu-sl-BdB">
@@ -288,7 +288,7 @@
         <!--Add Log Pop Up View Controller-->
         <scene sceneID="JIX-Q2-tkA">
             <objects>
-                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="x5i-yA-JLW" customClass="AddLogPopUpViewController" customModule="WorkoutLog_0_2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="x5i-yA-JLW" customClass="AddLogPopUpViewController" customModule="Workout_Log" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wID-8L-BFj"/>
                         <viewControllerLayoutGuide type="bottom" id="2kw-uu-T0W"/>
@@ -355,7 +355,7 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="PEs-bj-hj0" userLabel="Text Fields Stack View">
                                                         <rect key="frame" x="78.5" y="0.0" width="165" height="150"/>
                                                         <subviews>
-                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zAl-CX-4Cg" userLabel="Muscle Text Field" customClass="CustomTextField" customModule="WorkoutLog_0_2" customModuleProvider="target">
+                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zAl-CX-4Cg" userLabel="Muscle Text Field" customClass="CustomTextField" customModule="Workout_Log" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="165" height="30"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="165" id="WSg-DR-YKR"/>
@@ -364,7 +364,7 @@
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                             </textField>
-                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fBS-mo-otv" userLabel="Exercise Text Field" customClass="CustomTextField" customModule="WorkoutLog_0_2" customModuleProvider="target">
+                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fBS-mo-otv" userLabel="Exercise Text Field" customClass="CustomTextField" customModule="Workout_Log" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="40" width="165" height="30"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="165" id="8sn-OS-TzL"/>
@@ -373,7 +373,7 @@
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                             </textField>
-                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PMH-LO-KeB" userLabel="Reps Text Field" customClass="CustomTextField" customModule="WorkoutLog_0_2" customModuleProvider="target">
+                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PMH-LO-KeB" userLabel="Reps Text Field" customClass="CustomTextField" customModule="Workout_Log" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="80" width="65" height="30"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="65" id="wMN-dx-3fr"/>
@@ -382,7 +382,7 @@
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad"/>
                                                             </textField>
-                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="B8O-gC-EiP" userLabel="Weight Text Field" customClass="CustomTextField" customModule="WorkoutLog_0_2" customModuleProvider="target">
+                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="B8O-gC-EiP" userLabel="Weight Text Field" customClass="CustomTextField" customModule="Workout_Log" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="120" width="65" height="30"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="65" id="qsX-OD-ry2"/>
@@ -479,7 +479,7 @@
         <!--Edit log-->
         <scene sceneID="rVN-VX-9iX">
             <objects>
-                <viewController id="vLR-vU-GZI" customClass="EditLogViewController" customModule="WorkoutLog_0_2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vLR-vU-GZI" customClass="EditLogViewController" customModule="Workout_Log" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2ok-UR-aoo"/>
                         <viewControllerLayoutGuide type="bottom" id="CH9-5l-wUF"/>
@@ -497,7 +497,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter number of reps" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tKJ-LW-ZiL" customClass="CustomTextField" customModule="WorkoutLog_0_2" customModuleProvider="target">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter number of reps" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tKJ-LW-ZiL" customClass="CustomTextField" customModule="Workout_Log" customModuleProvider="target">
                                         <rect key="frame" x="60" y="34" width="160" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="160" id="DoM-Xw-HvA"/>
@@ -517,7 +517,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter weight" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Kmg-7h-D3v" userLabel="Enter weight" customClass="CustomTextField" customModule="WorkoutLog_0_2" customModuleProvider="target">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter weight" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Kmg-7h-D3v" userLabel="Enter weight" customClass="CustomTextField" customModule="Workout_Log" customModuleProvider="target">
                                         <rect key="frame" x="60" y="34" width="160" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="160" id="bzu-md-dLI"/>
